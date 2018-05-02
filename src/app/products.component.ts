@@ -22,4 +22,13 @@ export class ProductsComponent {
 	addProduct() {
 		this.products.push(this.productName);
 	}
+
+	submitData(f) {
+		console.log(f);
+		this.products.push(f.value.productname);
+	}
+
+	onRemoveData(productName: String){
+		this.products = this.products.filter(p=>p !== productName);
+	}
 }
